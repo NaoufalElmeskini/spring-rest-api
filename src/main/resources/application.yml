@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: rest-api
+
+server:
+  port : 8080
+  servlet:
+    context-path: /rest-api
