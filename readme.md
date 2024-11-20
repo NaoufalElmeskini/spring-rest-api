@@ -38,5 +38,6 @@ usecase 1 : recuperer produit
 ## backlog désiré : 
 - ajouter wiremock
 - ajouter swagger
-- ajouter api observabilite /version (spring-actuator ?) 
+- ajouter api observabilite /version (spring-actuator ?)
+- fusionner les 2 projets (product-api et price-api) dans un modulith
 - organiser en architecture hexagonale
