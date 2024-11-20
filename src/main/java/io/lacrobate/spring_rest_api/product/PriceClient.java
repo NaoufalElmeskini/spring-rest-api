@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class PriceClient {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PriceClient.class);
-	private static final String baseUrl = "http://localhost:8082/api2";
+	private static final String baseUrl = "http://price-api:8082/api2";
 	private final RestTemplate restTemplate;
 
 	public Price getPrice(long productId){
