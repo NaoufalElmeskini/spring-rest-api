@@ -5,7 +5,12 @@ lancer [SpringRestApiApplication.java](src/main/java/io/lacrobate/spring_rest_ap
 
 l'application est accessible sur {baseUrl}
 
-## demarrer avec Docker :
+## docker compose (recommandé)
+$ docker compose up -d
+prerequis: projet price-api localisé comme spécifié dans docker-compose.yml
+
+
+## demarrer avec Docker (sans compose) :
 - generer le jar dans target
   $ mvn clean package
 - creer une image docker 
@@ -14,7 +19,7 @@ l'application est accessible sur {baseUrl}
   $ docker network create api-network
 - demarrer le container
   $ docker run -p 127.0.0.1:8080:8080 --network=api-network --name spring-rest-api spring-rest-api
-- 
+
   "--network=api-network --name spring-rest-api" : section necessaire pour que les 2 containers communiquent
 
 probleme docker ? => [journal]/../software/dockerFaq
@@ -33,4 +38,5 @@ usecase 1 : recuperer produit
 ## backlog désiré : 
 - ajouter wiremock
 - ajouter swagger
+- ajouter api observabilite /version (spring-actuator ?) 
 - organiser en architecture hexagonale
