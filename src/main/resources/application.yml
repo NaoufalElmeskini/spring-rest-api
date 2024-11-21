@@ -12,8 +12,7 @@ management:
       probability: 1.0
 
 tracing:
-#  jaeger url
-  url: http://localhost:4318/v1/traces
+  url: http://jaeger:4318/v1/traces
 
 logging:
   pattern:
