@@ -1,12 +1,11 @@
 package io.lacrobate.spring_rest_api.product;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
-@Builder
+@Data
+@NoArgsConstructor
 public class Price {
-	@Getter
 	private long productId;
-	@Getter private double priceAmount;
-	@Getter private double discount;
+	private double priceAmount;
+	private double discount;
 }
