@@ -7,8 +7,6 @@ l'application est accessible sur {baseUrl}
 
 ## démarrer avec docker compose (recommandé)
 $ docker compose up -d
-prerequis: projet price-api localisé comme spécifié dans docker-compose.yml
-![img.png](img.png)
 
 
 ## demarrer avec Docker (sans compose) :
