@@ -1,5 +1,7 @@
 package io.lacrobate.spring_rest_api;
 
+import io.lacrobate.spring_rest_api.client.JsonPlaceholderClient;
+import io.lacrobate.spring_rest_api.controller.UsersController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
