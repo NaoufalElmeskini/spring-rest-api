@@ -8,11 +8,7 @@ import java.util.List;
 
 @Component
 public class JsonPlaceholderClient {
-    private final RestClient restClient;
-
-    public JsonPlaceholderClient(RestClient restClient) {
-        this.restClient = restClient;
-    }
+    private final RestClient restClient = RestClient.create("https://jsonplaceholder.typicode.com");
 
     public List<ExternalUser> getUsers() {
         return restClient.get()
