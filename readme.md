@@ -17,7 +17,6 @@ docker compose up -d
 
 **With Docker**
 ```sh
-mvn clean package
 docker build -t spring-rest-api .
 docker run -p 8080:8080 spring-rest-api
 ```

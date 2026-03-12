@@ -1,12 +1,6 @@
 services:
-  product-service:
-    container_name: product-api
+  spring-rest-api:
+    container_name: spring-rest-api
     build: .
     ports:
       - "8080:8080"
-
-  price-service:
-    container_name: price-api
-    build: ../api2/
-    ports:
-      - "8082:8082"
