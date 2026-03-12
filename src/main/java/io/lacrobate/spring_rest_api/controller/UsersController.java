@@ -34,7 +34,7 @@ public class UsersController {
 		summary = "List all users",
 		responses = @ApiResponse(responseCode = "200", description = "Array of user names")
 	)
-	public String allUsers() {
+		public String allUsers() {
 		return users.toString();
 	}
 
