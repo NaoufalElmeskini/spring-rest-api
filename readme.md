@@ -1,33 +1,54 @@
+# Spring REST API
 
+A minimal REST API built with Spring Boot 3 and Java 21. Serves as a straightforward reference for REST conventions, request mapping, and project structure in the Spring ecosystem.
 
-## demarrer avec IDE :
-lancer [SpringRestApiApplication.java](src/main/java/io/lacrobate/spring_rest_api/SpringRestApiApplication.java)
+---
 
-l'application est accessible sur {baseUrl}
+## Run
+
+**From your IDE**
+
+Run [`SpringRestApiApplication.java`](src/main/java/io/lacrobate/spring_rest_api/SpringRestApiApplication.java) as a standard Java application.
+
+**With Docker Compose** (recommended)
+```sh
+docker compose up -d
+```
+
+**With Docker**
+```sh
+mvn clean package
+docker build -t spring-rest-api .
+docker run -p 8080:8080 spring-rest-api
+```
+
+Base URL: `http://localhost:8080/rest-api`
+
+---
 
 ## API
-show all users: 
-```sh 
-curl --request GET --url http://localhost:8080/rest-api/users
-```
 
-check if a user exists:
-```sh 
-curl --request GET --url http://localhost:8080/rest-api/users/exists/aicha
-```
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/users` | List all users |
+| GET | `/users/exists/{name}` | Check if a user exists |
+| POST | `/users` | Add a new user |
 
-add new user:
+**Examples**
 ```sh
-curl --request POST --url http://localhost:8080/rest-api/users --header 'Content-Type: application/json' --data alia
+curl http://localhost:8080/rest-api/users
+
+curl http://localhost:8080/rest-api/users/exists/aicha
+
+curl -X POST http://localhost:8080/rest-api/users \
+  -H 'Content-Type: application/json' \
+  -d 'alia'
 ```
 
+---
 
-## démarrer avec docker compose (recommandé)
-$ docker compose up -d
+## Docs
 
+Interactive API explorer (Swagger UI): `http://localhost:8080/rest-api/swagger-ui/index.html`
 
-## demarrer avec Docker (sans compose) :
-- generer le jar dans target
-  $ mvn clean package
-- creer une image docker 
-  $ docker build -t spring-rest-api .
+OpenAPI spec (JSON): `http://localhost:8080/rest-api/v3/api-docs`
