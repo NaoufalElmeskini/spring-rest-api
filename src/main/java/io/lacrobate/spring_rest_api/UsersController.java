@@ -1,6 +1,7 @@
 package io.lacrobate.spring_rest_api;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +13,14 @@ public class UsersController {
 	private List<String> users = List.of("John", "Aicha");
 
 
-	@GetMapping("/all")
-	public String users() {
+	@GetMapping
+	public String allUsers() {
 		return users.toString();
 	}
+
+	@GetMapping("/exists/{user}")
+	public Boolean doTheyExist(@PathVariable String user) {
+		return users.contains(user);
+	}
+
 }
