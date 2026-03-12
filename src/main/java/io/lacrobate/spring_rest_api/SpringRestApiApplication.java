@@ -12,8 +12,5 @@ public class SpringRestApiApplication {
 		SpringApplication.run(SpringRestApiApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+
 }
